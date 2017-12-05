@@ -14,7 +14,29 @@ public class OI {
 	private static Joystick rightStick = new Joystick (RobotMap.RIGHT_JOYSTICK_PORT);
 	
 	
+	public double getRightStickY() {
+		double rightStickY = rightStick.getY();
+		
+		return rightStickY;
+	}
 	
+	public double getRightStickX() {
+		double rightStickX = rightStick.getX();
+		
+		return rightStickX;
+	}
+	
+	public double getLeftStickY() {
+		double leftStickY = leftStick.getY();
+		
+		return leftStickY;
+	}
+	
+	public double getLeftStickX() {
+		double leftStickX = leftStick.getX();
+		
+		return leftStickX;
+	}
 	
 	
 	//// CREATING BUTTONS
