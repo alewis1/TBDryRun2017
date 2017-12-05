@@ -18,6 +18,7 @@ public class RobotMap {
 	public static final int midLeftMotor = 0;
 	public static final int botLeftMotor = 0;
 	
+	public static final int DriveMode = 0; //1 is arcade drive, 0 is tank drive
 	
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module. For example you with a rangefinder:

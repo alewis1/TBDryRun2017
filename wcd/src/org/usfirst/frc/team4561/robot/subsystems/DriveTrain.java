@@ -9,6 +9,8 @@ import org.usfirst.frc.team4561.robot.RobotMap;
 
 import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.RobotDrive;
+import org.usfirst.frc.team4561.robot.commands.DriveArcade;
+import org.usfirst.frc.team4561.robot.commands.DriveTank;
 
 /**
  *
@@ -27,12 +29,12 @@ public class DriveTrain extends Subsystem {
 	private RobotDrive robotDrive; 
 
 	public void initDefaultCommand() {
-		/*if (arcadeOrTank == 1) {
-			setDefaultCommand(arcadeDrive());
+		if (RobotMap.DriveMode == 1) {
+			setDefaultCommand(new DriveArcade());
 		}
 		else {
-			setDefaultCommand(tankDrive());
-		}*/
+			setDefaultCommand(new DriveTank());
+		}
     }
 	
 	public DriveTrain() {
