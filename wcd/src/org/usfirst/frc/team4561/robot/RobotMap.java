@@ -19,6 +19,11 @@ public class RobotMap {
 	public static final int botLeftMotor = 0;
 	
 	public static final int DriveMode = 0; //1 is arcade drive, 0 is tank drive
+	public static final int PCM = 0;
+	public static final int TRANSMISSION_SOLENOID_PORT = 0;
+	public static final int TRANSMISSION_SOLENOID_TWO_PORT = 0;
+	public static final int TRANSMISSION_SPEED_BUTTON = 0;
+	public static final int TRANSMISSION_TORQUE_BUTTON = 0;
 	
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module. For example you with a rangefinder:

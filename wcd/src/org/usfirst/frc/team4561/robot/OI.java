@@ -1,6 +1,11 @@
 package org.usfirst.frc.team4561.robot;
 
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
+import org.usfirst.frc.team4561.robot.commands.SpeedGear;
+import org.usfirst.frc.team4561.robot.commands.TorqueGear;
+
 import edu.wpi.first.wpilibj.Joystick;
 
 /**
@@ -10,8 +15,12 @@ import edu.wpi.first.wpilibj.Joystick;
 public class OI {
 	private static Joystick leftStick = new Joystick (RobotMap.LEFT_JOYSTICK_PORT);
 	private static Joystick rightStick = new Joystick (RobotMap.RIGHT_JOYSTICK_PORT);
-	
-	
+	private JoystickButton shiftSpeedButton = new JoystickButton(leftStick, RobotMap.TRANSMISSION_SPEED_BUTTON);
+	private JoystickButton shiftTorqueButton = new JoystickButton(leftStick, RobotMap.TRANSMISSION_TORQUE_BUTTON);
+	public OI(){
+		shiftSpeedButton.whenPressed(new SpeedGear());
+		shiftTorqueButton.whenPressed(new TorqueGear());
+	}
 	public double getRightStickY() {
 		double rightStickY = rightStick.getY();
 		
