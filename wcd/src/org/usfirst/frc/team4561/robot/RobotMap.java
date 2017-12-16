@@ -10,6 +10,12 @@ public class RobotMap {
 	public static final int RIGHT_JOYSTICK_PORT = 0;
 	public static final int LEFT_JOYSTICK_PORT = 0;
 	
+	// Joystick configuration
+	public static final double RIGHT_JOYSTICK_DEAD_ZONE = 0.25;
+	public static final double LEFT_JOYSTICK_DEAD_ZONE = 0.25;
+	public static final double RIGHT_JOYSTICK_REDUCTION = 0.25;
+	public static final double LEFT_JOYSTICK_REDUCTION = 0.25;
+	
 	public static final int FRONT_RIGHT_MOTOR_PORT = 0;
 	public static final int MID_RIGHT_MOTOR_PORT = 0;
 	public static final int BOT_RIGHT_MOTOR_PORT = 0;
