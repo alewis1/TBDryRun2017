@@ -17,10 +17,12 @@ public class OI {
 	private static Joystick rightStick = new Joystick (RobotMap.RIGHT_JOYSTICK_PORT);
 	private JoystickButton shiftSpeedButton = new JoystickButton(leftStick, RobotMap.TRANSMISSION_SPEED_BUTTON);
 	private JoystickButton shiftTorqueButton = new JoystickButton(leftStick, RobotMap.TRANSMISSION_TORQUE_BUTTON);
-	public OI(){
+	
+	public OI() {
 		shiftSpeedButton.whenPressed(new SpeedGear());
 		shiftTorqueButton.whenPressed(new TorqueGear());
 	}
+	
 	public double getRightStickY() {
 		double rightStickY = rightStick.getY();
 		

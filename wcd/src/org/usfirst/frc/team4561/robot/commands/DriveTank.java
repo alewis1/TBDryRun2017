@@ -8,9 +8,9 @@ import org.usfirst.frc.team4561.robot.Robot;
  *
  */
 public class DriveTank extends Command {
+	
 	public DriveTank() {
-		// Use requires() here to declare subsystem dependencies
-		requires(Robot.DriveTrain);
+		requires(Robot.driveTrain);
 	}
 
 	// Called just before this Command runs the first time
@@ -21,7 +21,7 @@ public class DriveTank extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.DriveTrain.tankDrive(Robot.oi.getLeftStickY(), Robot.oi.getRightStickY());
+		Robot.driveTrain.tankDrive(Robot.oi.getLeftStickY(), Robot.oi.getRightStickY());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

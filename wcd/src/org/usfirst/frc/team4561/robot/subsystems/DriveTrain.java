@@ -29,7 +29,7 @@ public class DriveTrain extends Subsystem {
 	private RobotDrive robotDrive; 
 
 	public void initDefaultCommand() {
-		if (RobotMap.DriveMode == 1) {
+		if (RobotMap.DRIVE_MODE == 1) {
 			setDefaultCommand(new DriveArcade());
 		}
 		else {
@@ -38,26 +38,26 @@ public class DriveTrain extends Subsystem {
     }
 	
 	public DriveTrain() {
-		frontRight = new CANTalon(RobotMap.topRightMotor);
-		frontLeft = new CANTalon(RobotMap.topLeftMotor);
+		frontRight = new CANTalon(RobotMap.FRONT_RIGHT_MOTOR_PORT);
+		frontLeft = new CANTalon(RobotMap.FRONT_LEFT_MOTOR_PORT);
 		
-		midRight = new CANTalon(RobotMap.midRightMotor);
+		midRight = new CANTalon(RobotMap.MID_RIGHT_MOTOR_PORT);
 		
 		// Sets other motors as slaves to masters FrontLeft/Right, set doesn't set power, it sets a slave
 		midRight.changeControlMode(CANTalon.TalonControlMode.Follower);
-		midRight.set(RobotMap.topRightMotor);
+		midRight.set(RobotMap.FRONT_RIGHT_MOTOR_PORT);
 		
-		rearRight = new CANTalon(RobotMap.botRightMotor);
+		rearRight = new CANTalon(RobotMap.BOT_RIGHT_MOTOR_PORT);
 		rearRight.changeControlMode(CANTalon.TalonControlMode.Follower);
-		rearRight.set(RobotMap.topRightMotor);
+		rearRight.set(RobotMap.FRONT_RIGHT_MOTOR_PORT);
 		
-		midLeft = new CANTalon(RobotMap.midLeftMotor);
+		midLeft = new CANTalon(RobotMap.MID_LEFT_MOTOR_PORT);
 		midLeft.changeControlMode(CANTalon.TalonControlMode.Follower);
-		midLeft.set(RobotMap.topLeftMotor);
+		midLeft.set(RobotMap.FRONT_LEFT_MOTOR_PORT);
 		
-		rearLeft = new CANTalon(RobotMap.botLeftMotor);
+		rearLeft = new CANTalon(RobotMap.BOT_LEFT_MOTOR_PORT);
 		rearLeft.changeControlMode(CANTalon.TalonControlMode.Follower);
-		rearLeft.set(RobotMap.topLeftMotor);
+		rearLeft.set(RobotMap.FRONT_LEFT_MOTOR_PORT);
 		
 		// Puts motors into RobotDrive class
 		robotDrive = new RobotDrive(frontLeft, frontRight);

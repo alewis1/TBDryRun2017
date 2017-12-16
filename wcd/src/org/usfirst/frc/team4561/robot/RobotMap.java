@@ -10,16 +10,16 @@ public class RobotMap {
 	public static final int RIGHT_JOYSTICK_PORT = 0;
 	public static final int LEFT_JOYSTICK_PORT = 0;
 	
-	public static final int topRightMotor = 0;
-	public static final int midRightMotor = 0;
-	public static final int botRightMotor = 0;
+	public static final int FRONT_RIGHT_MOTOR_PORT = 0;
+	public static final int MID_RIGHT_MOTOR_PORT = 0;
+	public static final int BOT_RIGHT_MOTOR_PORT = 0;
 	
-	public static final int topLeftMotor = 0;
-	public static final int midLeftMotor = 0;
-	public static final int botLeftMotor = 0;
+	public static final int FRONT_LEFT_MOTOR_PORT = 0;
+	public static final int MID_LEFT_MOTOR_PORT = 0;
+	public static final int BOT_LEFT_MOTOR_PORT = 0;
 	
-	public static final int DriveMode = 0; //1 is arcade drive, 0 is tank drive
-	public static final int PCM = 0;
+	public static final int DRIVE_MODE = 0; // 1 is arcade drive, 0 is tank drive
+	public static final int PCM_PORT = 0;
 	public static final int TRANSMISSION_SOLENOID_PORT = 0;
 	public static final int TRANSMISSION_SOLENOID_TWO_PORT = 0;
 	public static final int TRANSMISSION_SPEED_BUTTON = 0;
