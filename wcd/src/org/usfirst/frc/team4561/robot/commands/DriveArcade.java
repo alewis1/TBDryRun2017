@@ -16,7 +16,7 @@ public class DriveArcade extends Command {
 	
 	  protected void execute() {
 		  
-	    	Robot.DriveTrain.arcadeDrive(Robot.oi.getRightStickX(), Robot.oi.getRightStickY());
+	    	Robot.DriveTrain.arcadeDrive(Robot.oi.getLeftStickX(), Robot.oi.getRightStickY());
 	    }	  
 	  
 	  protected void initialize() {}
