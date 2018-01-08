@@ -21,7 +21,7 @@ import org.usfirst.frc.team4561.robot.subsystems.Transmission;
 public class Robot extends IterativeRobot {
 
 	public static final DriveTrain driveTrain = new DriveTrain();
-	public static final Transmission transmission = new Transmission();
+	// public static final Transmission transmission = new Transmission();
 	public static OI oi;
 
 	Command autonomousCommand;
