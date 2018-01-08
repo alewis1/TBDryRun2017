@@ -7,33 +7,24 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class DriveArcade extends Command {
 	
-	
-	
 	public DriveArcade() {
-		
-		requires(Robot.DriveTrain);
+		requires(Robot.driveTrain);
 	}
 	
-	  protected void execute() {
-		  
-	    	Robot.DriveTrain.arcadeDrive(Robot.oi.getLeftStickX(), Robot.oi.getRightStickY());
-	    }	  
+	protected void execute() {
+		Robot.driveTrain.arcadeDrive(Robot.oi.getRightStickX(), Robot.oi.getRightStickY());
+	}	  
 	  
-	  protected void initialize() {}
+	protected void initialize() {}
 	  
+	protected void end() {}
 	  
-	  
-	  protected void end() {}
-	  
-	  
-	  
-	  protected void interrupted() {
-		  end();
-	  }
-	  
+	protected void interrupted() {
+		end();
+	}
+	
 	@Override
 	protected boolean isFinished() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

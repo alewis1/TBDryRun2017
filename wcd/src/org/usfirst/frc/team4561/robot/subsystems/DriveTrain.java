@@ -1,14 +1,12 @@
 package org.usfirst.frc.team4561.robot.subsystems;
 
-import com.ctre.CANTalon;
-
-import edu.wpi.first.wpilibj.RobotDrive;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc.team4561.robot.RobotMap;
 
-import com.ctre.CANTalon;
-import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import org.usfirst.frc.team4561.robot.commands.DriveArcade;
 import org.usfirst.frc.team4561.robot.commands.DriveTank;
 
@@ -17,19 +15,22 @@ import org.usfirst.frc.team4561.robot.commands.DriveTank;
  */
 public class DriveTrain extends Subsystem {
 
-	private CANTalon frontRight;
-	private CANTalon frontLeft;
+	private WPI_TalonSRX frontRight;
+	private WPI_TalonSRX frontLeft;
 	
-	private CANTalon midRight;
-	private CANTalon midLeft;
+	private WPI_TalonSRX midRight;
+	private WPI_TalonSRX midLeft;
 	
-	private CANTalon rearRight;
-	private CANTalon rearLeft;
+	private WPI_TalonSRX rearRight;
+	private WPI_TalonSRX rearLeft;
+	
+	private ControlMode follower = com.ctre.phoenix.motorcontrol.ControlMode.Follower;
+	private ControlMode percentOutput = com.ctre.phoenix.motorcontrol.ControlMode.PercentOutput;
 		
-	private RobotDrive robotDrive; 
+	private DifferentialDrive robotDrive; 
 
 	public void initDefaultCommand() {
-		if (RobotMap.DriveMode == 1) {
+		if (RobotMap.DRIVE_MODE == 1) {
 			setDefaultCommand(new DriveArcade());
 		}
 		else {
@@ -38,29 +39,25 @@ public class DriveTrain extends Subsystem {
     }
 	
 	public DriveTrain() {
-		frontRight = new CANTalon(RobotMap.topRightMotor);
-		frontLeft = new CANTalon(RobotMap.topLeftMotor);
+		frontRight = new WPI_TalonSRX(RobotMap.FRONT_RIGHT_MOTOR_PORT);
+		frontLeft = new WPI_TalonSRX(RobotMap.FRONT_LEFT_MOTOR_PORT);
 		
-		midRight = new CANTalon(RobotMap.midRightMotor);
+		midRight = new WPI_TalonSRX(RobotMap.MID_RIGHT_MOTOR_PORT);
 		
 		// Sets other motors as slaves to masters FrontLeft/Right, set doesn't set power, it sets a slave
-		midRight.changeControlMode(CANTalon.TalonControlMode.Follower);
-		midRight.set(RobotMap.topRightMotor);
+		midRight.set(follower, RobotMap.FRONT_RIGHT_MOTOR_PORT);
 		
-		rearRight = new CANTalon(RobotMap.botRightMotor);
-		rearRight.changeControlMode(CANTalon.TalonControlMode.Follower);
-		rearRight.set(RobotMap.topRightMotor);
+		rearRight = new WPI_TalonSRX(RobotMap.BOT_RIGHT_MOTOR_PORT);
+		rearRight.set(follower, RobotMap.FRONT_RIGHT_MOTOR_PORT);
 		
-		midLeft = new CANTalon(RobotMap.midLeftMotor);
-		midLeft.changeControlMode(CANTalon.TalonControlMode.Follower);
-		midLeft.set(RobotMap.topLeftMotor);
+		midLeft = new WPI_TalonSRX(RobotMap.MID_LEFT_MOTOR_PORT);
+		midLeft.set(follower, RobotMap.FRONT_LEFT_MOTOR_PORT);
 		
-		rearLeft = new CANTalon(RobotMap.botLeftMotor);
-		rearLeft.changeControlMode(CANTalon.TalonControlMode.Follower);
-		rearLeft.set(RobotMap.topLeftMotor);
+		rearLeft = new WPI_TalonSRX(RobotMap.BOT_LEFT_MOTOR_PORT);
+		rearLeft.set(follower, RobotMap.FRONT_LEFT_MOTOR_PORT);
 		
 		// Puts motors into RobotDrive class
-		robotDrive = new RobotDrive(frontLeft, frontRight);
+		robotDrive = new DifferentialDrive(frontLeft, frontRight);
 
 	}
 	

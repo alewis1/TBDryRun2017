@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class SpeedGear extends Command {
 
     public SpeedGear() {
-        requires(Robot.Transmission);
+        requires(Robot.transmission);
     }
 
     // Called just before this Command runs the first time
@@ -24,8 +24,8 @@ public class SpeedGear extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//Actually change the gear
-    	Robot.Transmission.speedGear();
+    	// Actually change the gear
+    	Robot.transmission.speedGear();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -35,7 +35,7 @@ public class SpeedGear extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.Transmission.stop();
+    	Robot.transmission.stop();
     }
 
     // Called when another command which requires one or more of the same
