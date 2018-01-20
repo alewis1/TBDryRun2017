@@ -28,8 +28,8 @@ public class RobotMap {
 	public static final int PCM_PORT = 0;
 	public static final int TRANSMISSION_SOLENOID_PORT = 0;
 	public static final int TRANSMISSION_SOLENOID_TWO_PORT = 0;
-	public static final int TRANSMISSION_SPEED_BUTTON = 0;
-	public static final int TRANSMISSION_TORQUE_BUTTON = 0;
+	public static final int TRANSMISSION_SPEED_BUTTON = 4;
+	public static final int TRANSMISSION_TORQUE_BUTTON = 5;
 	
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module. For example you with a rangefinder:

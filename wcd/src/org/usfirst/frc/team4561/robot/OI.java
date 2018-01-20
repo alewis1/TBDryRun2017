@@ -149,7 +149,13 @@ public class OI {
 		return leftStickX;
 	}
 	
+	public boolean getLeftTrigger(){
+		return leftStick.getRawButton(1);
+	}
 	
+	public boolean getRightTrigger(){
+		return rightStick.getRawButton(1);
+	}
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
