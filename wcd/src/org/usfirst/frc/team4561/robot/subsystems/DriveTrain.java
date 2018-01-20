@@ -68,10 +68,11 @@ public class DriveTrain extends Subsystem {
 		frontLeft.setSelectedSensorPosition(0, 0, 0);
 		frontRight.setSelectedSensorPosition(0, 0, 0);
 		
-		frontLeft.config_kF(0, 0.113, 0);
+		frontLeft.config_kF(0, 0.226, 0);
 		frontLeft.config_kP(0, 2, 0);
-		frontLeft.config_kI(0, 0.0005, 0);
-		frontLeft.config_kD(0, 0, 0);
+		frontLeft.config_kI(0, 0.005, 0);
+		frontLeft.config_kD(0, 20, 0);
+		frontLeft.config_IntegralZone(0, 50, 0);
 		frontLeft.configMotionCruiseVelocity(1333, 0);
 		frontLeft.configMotionAcceleration(333, 0);
 		frontLeft.configNominalOutputForward(0, 0);
@@ -81,12 +82,13 @@ public class DriveTrain extends Subsystem {
 		frontLeft.setStatusFramePeriod(StatusFrameEnhanced.Status_13_Base_PIDF0, 10, 0);
 		frontLeft.setStatusFramePeriod(StatusFrameEnhanced.Status_10_MotionMagic, 10, 0);
 		
-		frontRight.config_kF(0, 0.255, 0);
+		frontRight.config_kF(0, 0.51, 0);
 		frontRight.config_kP(0, 2, 0);
-		frontRight.config_kI(0, 0.0005, 0);
-		frontRight.config_kD(0, 0, 0);
-		frontRight.configMotionCruiseVelocity(1333, 0);
-		frontRight.configMotionAcceleration(333, 0);
+		frontRight.config_kI(0, 0.005, 0);
+		frontRight.config_kD(0, 20, 0);
+		frontRight.config_IntegralZone(0, 50, 0);
+		frontRight.configMotionCruiseVelocity(670, 0);
+		frontRight.configMotionAcceleration(166, 0);
 		frontRight.configNominalOutputForward(0, 0);
 		frontRight.configNominalOutputReverse(0, 0);
 		frontRight.configPeakOutputForward(1, 0);
@@ -120,5 +122,9 @@ public class DriveTrain extends Subsystem {
 	}
 	public double getRightPos(){
 		return frontRight.getSelectedSensorPosition(0);
+	}
+	public void resetEncoders(){
+		frontLeft.setSelectedSensorPosition(0, 0, 0);
+		frontRight.setSelectedSensorPosition(0, 0, 0);
 	}
 }

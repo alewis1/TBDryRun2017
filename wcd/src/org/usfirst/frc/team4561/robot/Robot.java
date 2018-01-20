@@ -46,12 +46,13 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void disabledInit() {
-
+		driveTrain.resetEncoders();
 	}
 
 	@Override
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
+		driveTrain.resetEncoders();
 	}
 
 	/**

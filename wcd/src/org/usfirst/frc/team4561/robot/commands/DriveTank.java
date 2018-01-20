@@ -22,7 +22,7 @@ public class DriveTank extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-			Robot.driveTrain.tankDrive(Robot.oi.getLeftStickY(),Robot.oi.getRightStickY());
+			Robot.driveTrain.tankDrive(Robot.oi.getLeftStickY(),-Robot.oi.getLeftStickY());
 		SmartDashboard.putNumber("Left Speed", Robot.driveTrain.getLeftSpeed());
 		SmartDashboard.putNumber("Right Speed", Robot.driveTrain.getRightSpeed());
 		SmartDashboard.putNumber("Left Pos", Robot.driveTrain.getLeftPos());

@@ -3,6 +3,7 @@ package org.usfirst.frc.team4561.robot;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+import org.usfirst.frc.team4561.robot.commands.ResetEncoders;
 import org.usfirst.frc.team4561.robot.commands.SpeedGear;
 import org.usfirst.frc.team4561.robot.commands.TorqueGear;
 
@@ -17,10 +18,12 @@ public class OI {
 	private static Joystick rightStick = new Joystick (RobotMap.RIGHT_JOYSTICK_PORT);
 	private JoystickButton shiftSpeedButton = new JoystickButton(leftStick, RobotMap.TRANSMISSION_SPEED_BUTTON);
 	private JoystickButton shiftTorqueButton = new JoystickButton(leftStick, RobotMap.TRANSMISSION_TORQUE_BUTTON);
+	private JoystickButton rightTrigger = new JoystickButton(rightStick, 1);
 	
 	public OI() {
 		shiftSpeedButton.whenPressed(new SpeedGear());
 		shiftTorqueButton.whenPressed(new TorqueGear());
+		rightTrigger.whenPressed(new ResetEncoders());
 	}
 	
 	// Joystick inputs
