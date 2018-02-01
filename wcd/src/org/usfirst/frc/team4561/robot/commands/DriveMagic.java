@@ -18,8 +18,8 @@ public class DriveMagic extends Command {
 	}
 	protected void execute(){
 		if (Robot.oi.getLeftTrigger()){
-			double tLeft = 3600*Robot.oi.getLeftStickY()*10;
-			double tRight = -1800*Robot.oi.getLeftStickY()*10;
+			double tLeft = 3600*Robot.oi.getLeftStickY()*50;
+			double tRight = -1800*Robot.oi.getLeftStickY()*50;
 			Robot.driveTrain.magicDrive(tLeft, tRight);
 			System.out.print(tLeft);
 			System.out.print(" ");
@@ -29,5 +29,13 @@ public class DriveMagic extends Command {
 		SmartDashboard.putNumber("Right Speed", Robot.driveTrain.getRightSpeed());
 		SmartDashboard.putNumber("Left Pos", Robot.driveTrain.getLeftPos());
 		SmartDashboard.putNumber("Right Pos", Robot.driveTrain.getRightPos());
+		SmartDashboard.putNumber("Left Error", Robot.driveTrain.getLeftError());
+		SmartDashboard.putNumber("Right Error", Robot.driveTrain.getRightError());
+		SmartDashboard.putNumber("Gyro Angle", Robot.driveTrain.getGyroAngle());
+		SmartDashboard.putNumber("Gyro Rate", Robot.driveTrain.getGyroRate());
+		SmartDashboard.putNumber("Correction Value", 0);
+		SmartDashboard.putNumber("Avg Speed", Robot.driveTrain.avgSpeed());
+
+
 	}
 }

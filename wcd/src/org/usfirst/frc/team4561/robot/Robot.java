@@ -53,6 +53,19 @@ public class Robot extends IterativeRobot {
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 		driveTrain.resetEncoders();
+		driveTrain.resetGyro();
+		driveTrain.resetTarget();
+		SmartDashboard.putNumber("Left Speed", Robot.driveTrain.getLeftSpeed());
+		SmartDashboard.putNumber("Right Speed", Robot.driveTrain.getRightSpeed());
+		SmartDashboard.putNumber("Left Pos", Robot.driveTrain.getLeftPos());
+		SmartDashboard.putNumber("Right Pos", Robot.driveTrain.getRightPos());
+		SmartDashboard.putNumber("Left Error", Robot.driveTrain.getLeftError());
+		SmartDashboard.putNumber("Right Error", Robot.driveTrain.getRightError());
+		SmartDashboard.putNumber("Correction Value", 0);
+		SmartDashboard.putNumber("Avg Speed", Robot.driveTrain.avgSpeed());
+
+		//SmartDashboard.putNumber("Gyro Angle", Robot.driveTrain.getGyroAngle());
+		//SmartDashboard.putNumber("Gyro Rate", Robot.driveTrain.getGyroRate());
 	}
 
 	/**

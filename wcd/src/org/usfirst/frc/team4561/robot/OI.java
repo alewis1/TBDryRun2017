@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team4561.robot.commands.ResetEncoders;
 import org.usfirst.frc.team4561.robot.commands.SpeedGear;
 import org.usfirst.frc.team4561.robot.commands.TorqueGear;
+import org.usfirst.frc.team4561.robot.commands.TurnAround;
 
 import edu.wpi.first.wpilibj.Joystick;
 
@@ -23,7 +24,7 @@ public class OI {
 	public OI() {
 		shiftSpeedButton.whenPressed(new SpeedGear());
 		shiftTorqueButton.whenPressed(new TorqueGear());
-		rightTrigger.whenPressed(new ResetEncoders());
+		rightTrigger.whenPressed(new TurnAround());
 	}
 	
 	// Joystick inputs
